@@ -1,0 +1,7 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  /* text-align: center; */ }
+  body #layout-main {
+    min-height: 100vh; }

@@ -1,0 +1,11 @@
+body{
+    display:flex;
+    flex-direction: column;
+    margin : 0px;
+    // height:100%;
+    /* text-align: center; */
+    #layout-main{
+        min-height: 100vh;
+        // min-height: 80vh;
+    }
+}
