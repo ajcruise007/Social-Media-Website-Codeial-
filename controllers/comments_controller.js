@@ -4,7 +4,7 @@ const commentsMailer = require('../mailers/comments_mailer');
 const queue = require('../config/kue');
 const commentEmailWorker = require('../workers/comment_email_worker');
 
-// const { Job } = require('kue');
+    // const { Job } = require('kue');
 
 module.exports.create = async function (req, res) {
 
