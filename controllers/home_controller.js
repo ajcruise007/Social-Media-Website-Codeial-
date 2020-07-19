@@ -1,5 +1,6 @@
 const Post = require('../models/post');
 const User = require('../models/user');
+const { populate } = require('../models/post');
 
 module.exports.home = async function (req, res) {
     // console.log(req.cookies);
@@ -19,11 +20,15 @@ module.exports.home = async function (req, res) {
         let posts = await Post.find({})
         .sort('-createdAt')
         .populate('user', '-password')
+        .populate('likes')
         .populate({
             path: 'comments',
 
             populate: {
                 path: 'user'
+            },
+            populate: {
+                path: 'likes'
             }
         })
 

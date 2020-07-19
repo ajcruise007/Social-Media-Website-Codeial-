@@ -22,6 +22,8 @@
                     timeout: 1500
                 }).show();
                let newPost = newPostDom(data.data.post);
+
+               new ToggleLike($(' .toggle-like-button', newPost));
                 console.log(data.data.post._id);//
                $('#posts-list-container>ul').prepend(newPost);
                deletePost($(' .delete-post-button', newPost));
@@ -45,6 +47,13 @@
             <br>
             <small>
                 ${post.user.name}
+            </small>
+            <br>
+            <small>
+                    <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
+                        0 likes
+                    </a>
+
             </small>
         </p>
 

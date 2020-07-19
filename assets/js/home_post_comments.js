@@ -19,6 +19,8 @@ console.log(newCommentForm);
                 commentList.prepend(newComment);
                 console.log($(' .delete-comment-button', newComment))
                 deleteComment($(' .delete-comment-button', newComment));
+               new ToggleLike($(' .toggle-like-button', newComment));
+
 
                 new Noty({
                     theme: 'relax',
@@ -73,6 +75,13 @@ newCommentDom = function(comment){
         ${comment.content}
         <br>
         <small> ${comment.user.name}</small>
+        <br>
+        <small>
+                <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comment._id}&type=Comment">
+                    0 likes
+                </a>
+
+        </small>
     </p>
 </li`);
 }
